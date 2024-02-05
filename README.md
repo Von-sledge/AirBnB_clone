@@ -1,4 +1,5 @@
 # AirBnB Clone Project:
+![AirBnB](https://www.airbnb.com/)
 **AirBnB is a well-known online marketplace and hospitality service that enables people to lease or rent short term lodging 
   including vacation rentals , apartment rentals, homestays, hostel beds, or hotel rooms.**
    
@@ -25,3 +26,6 @@ The platform operates in multiple countries and cities worldwide, catering to a 
 
 ## Technologies  to used:
  - Python
+ - HTML/CSS
+ - RESTful API
+ - JQuery
