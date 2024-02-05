@@ -1,5 +1,6 @@
 # AirBnB Clone Project:
-![AirBnB](https://www.airbnb.com/)
+![AirBnB](https://github.com/Von-sledge/AirBnB_clone/blob/main/Extras/airbnb.svg)
+
 **AirBnB is a well-known online marketplace and hospitality service that enables people to lease or rent short term lodging 
   including vacation rentals , apartment rentals, homestays, hostel beds, or hotel rooms.**
    
