@@ -2,9 +2,9 @@
 **AirBnB is a well-known online marketplace and hospitality service that enables people to lease or rent short term lodging 
   including vacation rentals , apartment rentals, homestays, hostel beds, or hotel rooms.**
    
-# Founding and Launch:
-**Founders: Brian Chesky, Nathan Blecharczyk, and Joe Gebbia.
-  Launch Year: Founded in August 2008, with the first listing in San Francisco.**
+## Founding and Launch:
+**Founders:** Brian Chesky, Nathan Blecharczyk, and Joe Gebbia.
+**Launch Year:** Founded in August 2008, with the first listing in San Francisco.
 
 ## Business Model:
 Airbnb operates on a peer-to-peer model, allowing individuals (hosts) to rent out their properties or spare rooms to guests.
