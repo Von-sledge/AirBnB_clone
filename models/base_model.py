@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""BaseModel Module defines all common attributes/methods for classes of AirBnB clone."""
+"""BaseModel Module defines for classes of AirBnB clone."""
 
 from uuid import uuid4
 import datetime
-#import models
+import models
 
 
 class BaseModel:
@@ -19,11 +19,22 @@ class BaseModel:
     is created and it will be updated every time you change your object.
     """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """Initialize BaseModel with unique ID."""
+
+        time_format = '%Y-%m-%dT%H:%M:%S.%f'
         self.id = str(uuid.uuid4())
         self.created_at = datetime.today()
         self.updated_at = datettime.today()
+        
+        if len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key in ("created_at", "updated_at"):
+                    self.__dict__[key] = datetime.strptime(value, time_format)
+                else:
+                    self.__dict__[key] = value
+        else:
+             models.storage.new(self)
 
     def __str__(self):
         """Print: [<class name>] (<self.id>) <self.__dict__>."""
