@@ -26,7 +26,7 @@ class BaseModel:
         self.id = str(uuid.uuid4())
         self.created_at = datetime.today()
         self.updated_at = datettime.today()
-        
+
         if len(kwargs) != 0:
             for key, value in kwargs.items():
                 if key in ("created_at", "updated_at"):
@@ -34,7 +34,7 @@ class BaseModel:
                 else:
                     self.__dict__[key] = value
         else:
-             models.storage.new(self)
+            models.storage.new(self)
 
     def __str__(self):
         """Print: [<class name>] (<self.id>) <self.__dict__>."""
