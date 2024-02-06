@@ -3,6 +3,7 @@
 import json
 from models.base_model import BaseModel
 
+
 class FileStorage:
     """Serializes instances to a JSON file\
        and deserializes JSON file to instances.
@@ -32,6 +33,12 @@ class FileStorage:
 
     def save(self):
         """serializes __objects to the JSON file path"""
-    
+        json_file = {}
+        with open(self.__file_path, mode='w', encoding='utf-8') as f:
+            json.dumps(json_file, f)
+
     def reload(self):
         """desrializes the JSON file to __objects if it exists"""
+        if path.exists(self.__file_path):
+            with open(self.__file_path, mode='r', encoding='utf-8') as f:
+                json.loads(f.read())
