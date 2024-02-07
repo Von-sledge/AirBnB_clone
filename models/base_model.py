@@ -3,6 +3,7 @@
 
 from uuid import uuid4
 import datetime
+import models
 
 
 class BaseModel:
@@ -33,7 +34,7 @@ class BaseModel:
                 else:
                     self.__dict__[key] = value
         else:
-            new(self)
+            models.storage.new(self)
 
     def __str__(self):
         """Print: [<class name>] (<self.id>) <self.__dict__>."""
@@ -43,6 +44,7 @@ class BaseModel:
     def save(self):
         """Update the public instance update_at with the current datetime."""
         self.updated_at = datetime.today()
+        models.storage.save()
 
     def to_dict(self):
         """Return a dictionary containing all keys/values of __dict__."""
