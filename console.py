@@ -2,6 +2,9 @@
 """This contains the entry point of the command interpreter"""
 import cmd
 import models
+from models.user import User
+from models.base_model import BaseModel
+import re
 
 
 class HBNBCommand(cmd.Cmd):
