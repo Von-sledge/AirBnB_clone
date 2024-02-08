@@ -41,7 +41,7 @@ class HBNBCommand(cmd.Cmd):
         elif new_comm[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         elif obj_id == "":
-            print ("** instance id missing **")
+            print("** instance id missing **")
         else:
             cls_id = models.storage.all().get(new_comm + "." + obj_id)
             if cls_id is None:
@@ -58,7 +58,7 @@ class HBNBCommand(cmd.Cmd):
         elif cls_name not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         elif obj_id == "":
-            print ("** instance id missing **")
+            print("** instance id missing **")
         else:
             cls_id = models.storage.all().get(new_comm + "." + obj_id)
             if cls_id is None:
