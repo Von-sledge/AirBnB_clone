@@ -6,6 +6,11 @@ import datetime
 from uuid import UUID
 import json
 import os
+from models.city import City
+from models.place import Place
+from models.amenity import Amenity
+from models.state import State
+from models.review import Review
 
 
 class test_basemodel(unittest.TestCase):
