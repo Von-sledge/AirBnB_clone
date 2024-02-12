@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Class fileStorage"""
 import json
-import os
+from os import path
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State

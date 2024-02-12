@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """This contains the entry point of the command interpreter"""
 import cmd
-import models
 from models.user import User
 from models.base_model import BaseModel
 import re
@@ -75,15 +74,19 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
             else:
                 del cls_id
-            models.storage.save()
+                models.storage.save()
 
     def do_all(self, line):
         """Prints all string representation based on class name/otherwise"""
         cls_name = self.parseline(line)[0]
-        if len(cls_name) > 0 or cls_name == obj.__class__.__name__:
-            print("** class name missing **")
+        if cls_name is None:
+            print([str(models.storage.all()[obj]) for obj in cls_name])
+        elif cls_name in HBNBCommand.__classes:
+            key = models.storage.all().keys
+            for key in keys if key.startswith(cls_name)]):
+                print([str(models.storage.all()[obj]))
         else:
-            print(cls_name)
+            print("** class doesn't exist **")
 
     def do_update(self, line):
         """Updates an instance based on the class name and id\
