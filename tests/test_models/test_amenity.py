@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module to test the instances of the amenities."""
-from tests.test_model.test_base_model import test_basemodel
+from tests.test_model import test_basemodel
 from model.amenity import Amenity
 
 

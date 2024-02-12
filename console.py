@@ -79,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, line):
         """Prints all string representation based on class name/otherwise"""
         cls_name = self.parseline(line)[0]
-        if cls_name is None:
+        if len(cls_name) > 0 or cls_name == obj.__class__.__name__:
             print("** class name missing **")
         else:
             print(cls_name)
@@ -89,6 +89,59 @@ class HBNBCommand(cmd.Cmd):
            by adding or updating attribute\
            (save the change into the JSON file)
         """
+        args = parse(line)
+        args_size = len(args)
+        objdict = storage.all()
+
+        if args_size == 0:
+            print("** class name missing **")
+            return False
+        if args[0] not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
+            return False
+        if args_size == 1:
+            print("** instance id missing **")
+            return False
+        if "{}.{}".format(args[0], args[1]) not in objdict.keys():
+            print("** no instance found **")
+            return False
+        if args_size == 2:
+            print("** attribute name missing **")
+            return False
+        if args_size == 3:
+            try:
+                type(eval(args[2])) != dict
+            except NameError:
+                print("** value missing **")
+                return False
+
+        if args_size == 4:
+            obj = objdict["{}.{}".format(argl[0], argl[1])]
+            if args[2] in obj.__class__.__dict__.keys():
+                value = type(obj.__class__.__dict__[args[2]])
+                obj.__dict__[args[2]] = value(args[3])
+            else:
+                obj.__dict__[args[2]] = args[3]
+        elif type(eval(args[2])) == dict:
+            obj = objdict["{}.{}".format(args[0], args[1])]
+            obj_type = obj.__class__.__dict__.keys()
+            for key, value in eval(argl[2]).items():
+                if (key in obj_type and type(obj_type.__class__.__dict__[key])
+                        in {str, int, float}):
+                    value_type = type(obj.__class__.__dict__[key])
+                    obj.__dict__[key] = value_type(value)
+                else:
+                    obj.__dict__[key] = value
+        models.storage.save()
+
+    def do_count(self, line):
+        """Retrieve the number of instances of a given class"""
+        command = self.parseline(line)
+        count = 0
+        for obj in storage.all().values():
+            if command[0] == obj.__class__.__name__:
+                count += 1
+        print(count)
 
 
 if __name__ == "__main__":

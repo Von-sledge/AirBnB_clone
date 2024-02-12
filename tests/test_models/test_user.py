@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module to test the instances of Class test_user."""
-from tests.test_models.test_basemodel import test_basemodel
+import test_models
 from models.user import User
 
 
