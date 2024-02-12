@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This contains the entry point of the command interpreter"""
 import cmd
+import models
 from models.user import User
 from models.base_model import BaseModel
 import re
@@ -16,6 +17,15 @@ from datetime import datetime
 class HBNBCommand(cmd.Cmd):
     """cli - command line interface class"""
     prompt = "(hbnb) "
+    hbnb_class = {
+        "BaseModel",
+        "User",
+        "State",
+        "City",
+        "Place",
+        "Amenity",
+        "Review"
+    }
 
     def do_quit(self, line):
         """Exits the program"""
@@ -32,10 +42,10 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, line):
         """Creates a new instance and saves to JSON file"""
-        new_comm = self.parseline(line)
+        new_comm = self.parseline(line)[0]
         if new_comm is None:
             print("** class name missing **")
-        elif new_comm[0] not in HBNBCommand.__classes:
+        elif new_comm[0] not in self.hbnb_class:
             print("** class doesn't exist **")
         else:
             print(eval(new_comm[0])().id)
@@ -47,7 +57,7 @@ class HBNBCommand(cmd.Cmd):
         obj_id = self.parseline(line)[1]
         if new_comm is None:
             print("** class name missing **")
-        elif new_comm[0] not in HBNBCommand.__classes:
+        elif new_comm[0] not in self.hbnb_class:
             print("** class doesn't exist **")
         elif obj_id == "":
             print("** instance id missing **")
@@ -64,7 +74,7 @@ class HBNBCommand(cmd.Cmd):
         obj_id = self.parseline(line)[1]
         if cls_name is None:
             print("** class name missing **")
-        elif cls_name not in HBNBCommand.__classes:
+        elif cls_name not in self.hbnb_class:
             print("** class doesn't exist **")
         elif obj_id == "":
             print("** instance id missing **")
@@ -79,12 +89,12 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, line):
         """Prints all string representation based on class name/otherwise"""
         cls_name = self.parseline(line)[0]
+        save = models.storage.all()
         if cls_name is None:
-            print([str(models.storage.all()[obj]) for obj in cls_name])
-        elif cls_name in HBNBCommand.__classes:
-            key = models.storage.all().keys
-            for key in keys if key.startswith(cls_name)]):
-                print([str(models.storage.all()[obj]))
+            print([str(save[obj]) for obj in save])
+        elif cls_name in self.hbnb_class:
+            keys = save.keys()
+            print([str(save[key]) for key in keys if key.startswith(command)])
         else:
             print("** class doesn't exist **")
 
@@ -100,7 +110,7 @@ class HBNBCommand(cmd.Cmd):
         if args_size == 0:
             print("** class name missing **")
             return False
-        if args[0] not in HBNBCommand.__classes:
+        if args[0] not in self.hbnb_class:
             print("** class doesn't exist **")
             return False
         if args_size == 1:
