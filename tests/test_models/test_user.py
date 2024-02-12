@@ -4,10 +4,9 @@ from tests.test_models.test_basemodel import test_basemodel
 from models.user import User
 
 
-
 class test_User(test_basemodel):
     """Test various instances of user."""
-    
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.name - "User"

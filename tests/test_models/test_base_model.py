@@ -8,7 +8,6 @@ import json
 import os
 
 
-
 class test_basemodel(unittest.TestCase):
     """Class to test the instances of basemodel."""
     super().__init__(self, *args, **kwargs):
@@ -24,7 +23,7 @@ class test_basemodel(unittest.TestCase):
     def tearDown(self):
         try:
             os.remove('file.json')
-        except:
+        except IOError:
             pass
 
     def test_default(self):

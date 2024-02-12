@@ -6,7 +6,6 @@ from model import storage
 import os
 
 
-
 class test_fileStorage(unittest.TestCase):
     """Test the file storage method."""
 
@@ -22,7 +21,7 @@ class test_fileStorage(unittest.TestCase):
         """Remove storage file at the end of the tests."""
         try:
             os.remove('file.json')
-        except:
+        except IOError:
             pass
 
     def test_obj_list_empty(self):
