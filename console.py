@@ -47,8 +47,9 @@ class HBNBCommand(cmd.Cmd):
         elif new_comm[0] not in self.hbnb_class:
             print("** class doesn't exist **")
         else:
-            print(eval(new_comm()).id)
-            storage.save()
+            update = eval(new_comm)()
+            update.save()
+            print(update.id)
 
     def do_show(self, line):
         """Prints string representation based on class name"""
@@ -82,7 +83,7 @@ class HBNBCommand(cmd.Cmd):
             if cls_id is None:
                 print("** no instance found **")
             else:
-                del cls_id
+                del models.storage.all()[new_comm + "." + obj_id]
                 models.storage.save()
 
     def do_all(self, line):
