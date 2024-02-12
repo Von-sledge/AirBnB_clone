@@ -103,7 +103,7 @@ class HBNBCommand(cmd.Cmd):
            by adding or updating attribute\
            (save the change into the JSON file)
         """
-        args = parse(line)
+        args = self.parseline(line)
         args_size = len(args)
         objdict = storage.all()
 
@@ -130,7 +130,7 @@ class HBNBCommand(cmd.Cmd):
                 return False
 
         if args_size == 4:
-            obj = objdict["{}.{}".format(argl[0], argl[1])]
+            obj = objdict["{}.{}".format(args[0], args[1])]
             if args[2] in obj.__class__.__dict__.keys():
                 value = type(obj.__class__.__dict__[args[2]])
                 obj.__dict__[args[2]] = value(args[3])
@@ -140,13 +140,13 @@ class HBNBCommand(cmd.Cmd):
             obj = objdict["{}.{}".format(args[0], args[1])]
             obj_type = obj.__class__.__dict__.keys()
             for key, value in eval(argl[2]).items():
-                if (key in obj_type and type(obj_type.__class__.__dict__[key])
+                if (key in obj_type and type(obj.__class__.__dict__[key])
                         in {str, int, float}):
                     value_type = type(obj.__class__.__dict__[key])
                     obj.__dict__[key] = value_type(value)
                 else:
                     obj.__dict__[key] = value
-        models.storage.save()
+        storage.save()
 
     def do_count(self, line):
         """Retrieve the number of instances of a given class"""
