@@ -33,7 +33,6 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, line):
         "Exit command at End of File"
-        print("")
         return True
 
     def do_emptyline(self):
@@ -48,7 +47,7 @@ class HBNBCommand(cmd.Cmd):
         elif new_comm[0] not in self.hbnb_class:
             print("** class doesn't exist **")
         else:
-            print(eval(new_comm[0])().id)
+            print(eval(new_comm()).id)
             storage.save()
 
     def do_show(self, line):
