@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """Module for testing BaseModel."""
+import models
 from models.base_model import BaseModel
 import unittest
-import datetime
-from uuid import UUID
+from datetime import datetime
+from uuid import uuid4
 import json
 import os
 from models.city import City

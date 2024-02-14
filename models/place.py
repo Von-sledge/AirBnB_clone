@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Public instance attribute: Place"""
+import models
 from models.base_model import BaseModel
 
 

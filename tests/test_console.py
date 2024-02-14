@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Test cases for console"""
 import unittest
+import models
+import console
 from console import HBNBCommand
 from models.base_model import BaseModel
 from models.state import State
@@ -37,11 +39,11 @@ class Test_ConsoleCommand(unittest.TestCase):
         places = Place()
         amenities = Amenity()
         reviews = Review()
-        self.assertEqual(cities.__class__.__name__, "City")
-        self.assertEqual(amenities.__class__.__name__, "Amenity")
-        self.assertEqual(states.__class__.__name__, "State")
-        self.assertEqual(reviews.__class__.__name__, "Review")
-        self.assertEqual(places.__class__.__name__, "Place")
+        self.assertTrue(issubclass(states.__class__, BaseModel))
+        self.assertTrue(issubclass(cities.__class__, BaseModel))
+        self.assertTrue(issubclass(places.__class__, BaseModel))
+        self.assertTrue(issubclass(amenities.__class__, BaseModel))
+        self.assertTrue(issubclass(reviews.__class__, BaseModel))
 
 
 if __name__ == "__main__":

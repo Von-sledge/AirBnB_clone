@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Module for the state."""
+import test_models
+import models
 from tests.test_models.test_base_model import test_basemodel
 from models.state import State
 

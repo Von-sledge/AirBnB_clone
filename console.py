@@ -150,10 +150,10 @@ class HBNBCommand(cmd.Cmd):
 
     def do_count(self, line):
         """Retrieve the number of instances of a given class"""
-        command = self.parseline(line)
+        command = self.parseline(line)[0]
         count = 0
         for obj in storage.all().values():
-            if command[0] == obj.__class__.__name__:
+            if command == obj.__class__.__name__:
                 count += 1
         print(count)
 

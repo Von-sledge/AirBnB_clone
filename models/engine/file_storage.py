@@ -2,6 +2,7 @@
 """Class fileStorage"""
 import json
 from os import path
+import models
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -36,7 +37,7 @@ class FileStorage:
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.is"""
         obj_name = obj.__class__.__name__ + "." + obj.id
-        FileStorage.__objects[obj_name] = obj
+        FileStorage.__objects["{}.{}".format(obj_name, obj.id)] = obj
 
     def save(self):
         """serializes __objects to the JSON file path"""
@@ -44,12 +45,12 @@ class FileStorage:
         for key, value in FileStorage.__objects.items():
             json_file[key] = value.to_dict()
         with open(FileStorage.__file_path, mode="w", encoding="utf-8") as f:
-            json.dump(json_file, f)
+            f.write(json.dumps(json_file))
 
     def reload(self):
         """desrializes the JSON file to __objects if it exists"""
-        if path.exists(FileStorage.__file_path):
-            with open(FileStorage.__file_path, "r") as f:
+        if path.exists(self.__file_path):
+            with open(self.__file_path, mode="r", encoding="utf-8") as f:
                 json_file = json.loads(f.read())
             for key, value in json_file.items():
                 self.__objects[key] = eval(value['__class__'])(**value)
