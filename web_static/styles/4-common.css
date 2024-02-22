@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    
+    max-width: 1000px;
+    background-color: #FFFFFF;
+    padding-bottom: 10px;
+    margin: 30px auto;
+}

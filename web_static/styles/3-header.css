@@ -1,0 +1,13 @@
+header{
+    display: flex;
+    color: white;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px #CCCCCC solid;
+}
+
+.logo-image{
+    background-image: url(./images/hbnb.png);
+    background-repeat: no-repeat;
+}
+
