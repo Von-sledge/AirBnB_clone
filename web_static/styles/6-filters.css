@@ -1,0 +1,84 @@
+/*
+ * === Filters class style ===
+ */
+
+/* Filters */
+section.filters {
+    align-items: center;
+    background-color: white;
+    border: 1px #DDDDDD;
+    border-radius: 4px;
+    height: 70px;
+    width: 100px;
+}
+.btn {
+color: #FFFFFF;
+background-color: #FF5A5F;
+font-size: 18px;
+border: 0;
+border-radius: 4px;
+height: 48px;
+width: 20px;
+}
+.btn-filters {
+margin-left: auto;
+margin-right: 30px;
+}
+.btn-filters:hover {
+opacity: 90%;
+}
+
+/* Locations and amenities */
+div.locations,
+div.amenities {
+display: inline-block;
+height: 100%;
+width: 25%;
+}
+
+/* Locations border */
+div.locations {
+border-right: 1px solid #DDDDDD;
+}
+
+.filters .locations:hover .popover,
+.filters .amenities:hover .popover {
+  display: block;
+}
+
+/* Header 2 style */
+h2 {
+    font-size: 16px;
+}
+/* Header 3 style */
+.filters h3 {
+font-weight: 600;
+height: 50%;
+}
+
+/* Header 4 style */
+.filters h4 {
+font-weight: 400;
+font-size: 14px;
+margin: 0;
+}
+
+/* Locations and amenities */
+.filters .popover {
+    background-color: #FAFAFA;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    display: none;
+    width: 10%;
+    position: absolute;
+}
+
+ul {
+    list-style: none;
+}
+li {
+    line-height: 25px;
+}
+li .popover-item {
+    margin-bottom: 20px;
+}

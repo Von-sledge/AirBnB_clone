@@ -1,7 +1,21 @@
+<<<<<<< HEAD
 body{
+=======
+/*
+ * === Global style sheet ===
+ */
+
+/* Common Body style */ 
+body {
+>>>>>>> refs/remotes/origin/main
     margin: 0;
     padding: 0;
     color: #484848;
     font-size: 14px;
+<<<<<<< HEAD
     font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+=======
+    font-family: Circular, "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+>>>>>>> refs/remotes/origin/main

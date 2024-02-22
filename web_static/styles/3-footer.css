@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 footer{
     display: flex;
     position: absolute;
@@ -15,3 +16,21 @@ span{
     color: #000;
     left: 50%;
 }
+=======
+/*
+ * === Footer style ===
+ */
+
+/* Footer */
+footer {
+    background-color: white;
+    height: 60px;
+    width: 100px;
+    border-top: 1px solid #CCCCCC;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    display: flex;
+    bottom: 0;
+}
+>>>>>>> refs/remotes/origin/main

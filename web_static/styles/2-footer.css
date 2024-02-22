@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 footer{
     position: fixed;
     background-color: #00FF00; 
@@ -12,3 +13,22 @@ footer > span{
     line-height: 60px; 
     white-space: nowrap;
 }
+=======
+/*
+ * === Footer style ===
+ */
+
+/* Footer */
+footer {
+	background-color: #00FF00;
+	bottom: 0;
+	height: 60px;
+	position: absolute;
+	width: 100%;
+}
+
+footer p {
+	line-height: 30px;
+	text-align: center;
+}
+>>>>>>> refs/remotes/origin/main

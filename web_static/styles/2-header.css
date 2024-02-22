@@ -1,5 +1,18 @@
+<<<<<<< HEAD
 header{
     background-color: #FF0000;
     height: 70px; 
     width: 100%;
 }
+=======
+/*
+ * === Header style ===
+ */
+
+/* Header style */
+header {
+	background-color: #FF0000;
+	height: 70px;
+	width: 100%;
+}
+>>>>>>> refs/remotes/origin/main
