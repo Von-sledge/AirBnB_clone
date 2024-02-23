@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 footer{
     display: flex;
     position: absolute;
@@ -17,6 +18,8 @@ span{
     left: 50%;
 }
 =======
+=======
+>>>>>>> 4844ee703cfb5bd7a177c06391ec0782b8c15677
 /*
  * === Footer style ===
  */
@@ -33,4 +36,7 @@ footer {
     display: flex;
     bottom: 0;
 }
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/main
+=======
+>>>>>>> 4844ee703cfb5bd7a177c06391ec0782b8c15677

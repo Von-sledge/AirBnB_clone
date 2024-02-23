@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .filters{
     display: flex;
     background-color: #fff;
@@ -27,6 +28,8 @@
     opacity: 0.9;
 }
 =======
+=======
+>>>>>>> 4844ee703cfb5bd7a177c06391ec0782b8c15677
 /*
  * === Filters class style ===
  */
@@ -55,4 +58,7 @@ section.filters {
 .btn-filters:hover {
     opacity: 90%;
 }
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/main
+=======
+>>>>>>> 4844ee703cfb5bd7a177c06391ec0782b8c15677

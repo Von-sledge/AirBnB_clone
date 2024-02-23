@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 body{
 =======
+=======
+>>>>>>> 4844ee703cfb5bd7a177c06391ec0782b8c15677
 /*
  * === Global style ===
  */
@@ -9,11 +12,15 @@ body{
 body {
     color: #484848;
     font: 14px Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/main
+=======
+>>>>>>> 4844ee703cfb5bd7a177c06391ec0782b8c15677
     margin: 0;
     padding: 0;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .container{
     display: flex;
@@ -24,10 +31,15 @@ body {
     margin: 30px auto;
 }
 =======
+=======
+>>>>>>> 4844ee703cfb5bd7a177c06391ec0782b8c15677
 /* Container */
 .container  {
     margin: 30px;
     max-width: 1000px;
     width: 100%;
 }
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/main
+=======
+>>>>>>> 4844ee703cfb5bd7a177c06391ec0782b8c15677

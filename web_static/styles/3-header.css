@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 header{
     display: flex;
     color: white;
@@ -13,6 +14,8 @@ header{
 }
 
 =======
+=======
+>>>>>>> 4844ee703cfb5bd7a177c06391ec0782b8c15677
 /*
  * === Header style ===
  */
@@ -25,4 +28,7 @@ header {
     border-bottom: 1px solid #CCCCCC;
     display: flex;
 }
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/main
+=======
+>>>>>>> 4844ee703cfb5bd7a177c06391ec0782b8c15677
