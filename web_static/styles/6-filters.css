@@ -1,48 +1,57 @@
 /*
  * === Filters class style ===
- */
+*/
 
 /* Filters */
-section.filters {
+.filters {
     align-items: center;
     background-color: white;
-    border: 1px #DDDDDD;
+    border: 1px #DDDDDD solid;
     border-radius: 4px;
     height: 70px;
-    width: 100px;
+    width: 100%;
+    display: flex;
 }
-.btn {
-color: #FFFFFF;
-background-color: #FF5A5F;
-font-size: 18px;
-border: 0;
-border-radius: 4px;
-height: 48px;
-width: 20px;
+
+.search-btn{
+    color: #FFFFFF;
+    background-color: #FF5A5F;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    height: 48px;
+    cursor: pointer;
+    width: 20%;
+    margin-right: 30px;
+    margin-left: auto;
 }
-.btn-filters {
-margin-left: auto;
-margin-right: 30px;
-}
-.btn-filters:hover {
-opacity: 90%;
+
+.search-btn:hover {
+opacity: 0.9;
 }
 
 /* Locations and amenities */
-div.locations,
-div.amenities {
+.locations,
+.amenities {
 display: inline-block;
 height: 100%;
 width: 25%;
+padding-left: 40px;
+line-height: 5px;
 }
 
 /* Locations border */
-div.locations {
+.locations {
 border-right: 1px solid #DDDDDD;
 }
 
-.filters .locations:hover .popover,
-.filters .amenities:hover .popover {
+.amenities{
+    margin-left: 10px;
+
+}
+
+.filters > .locations:hover .popover,
+.filters > .amenities:hover .popover {
   display: block;
 }
 
@@ -50,14 +59,15 @@ border-right: 1px solid #DDDDDD;
 h2 {
     font-size: 16px;
 }
+
 /* Header 3 style */
-.filters h3 {
+.filters > h3 {
 font-weight: 600;
 height: 50%;
 }
 
 /* Header 4 style */
-.filters h4 {
+.filters > h4 {
 font-weight: 400;
 font-size: 14px;
 margin: 0;
@@ -77,7 +87,7 @@ ul {
     list-style: none;
 }
 li {
-    line-height: 25px;
+    line-height: 20px;
 }
 li .popover-item {
     margin-bottom: 20px;
